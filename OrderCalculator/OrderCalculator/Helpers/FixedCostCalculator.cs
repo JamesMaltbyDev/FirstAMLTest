@@ -7,7 +7,7 @@ namespace OrderCalculator.Helpers
 {
     internal class FixedCostCalculator
     {
-        public int GetPackageCost(Package package)
+        public static int GetPackageCost(Package package)
         {
             throw new NotImplementedException();
         }

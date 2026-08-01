@@ -22,9 +22,8 @@ namespace OrderCalculatorTests
                 Width = width,
                 Height = height
             };
-
-            var calculator = new FixedCostCalculator();
-            var calculatedCost = calculator.GetPackageCost(package);
+            
+            var calculatedCost = FixedCostCalculator.GetPackageCost(package);
 
             Assert.Equal(cost, calculatedCost);
         }

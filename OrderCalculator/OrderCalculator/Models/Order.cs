@@ -28,6 +28,11 @@ namespace OrderCalculator.Models
         /// Height in cm
         /// </summary>
         public int Height { get; set; }
+
+        /// <summary>
+        /// Cost of the package
+        /// </summary>
+        public int Cost { get; set; }
     }
 
 
@@ -35,5 +40,5 @@ namespace OrderCalculator.Models
     {
         public List<Package> Packages { get; set; } = new List<Package>();
 
-    }
+    }    
 }
