@@ -23,7 +23,7 @@ namespace OrderCalculatorTests
                 Height = height
             };
             
-            var calculatedCost = FixedCostCalculator.GetPackageCost(package);
+            var calculatedCost = FixedCostCalculator.GetPackageCost(package, false);
 
             Assert.Equal(cost, calculatedCost);
         }

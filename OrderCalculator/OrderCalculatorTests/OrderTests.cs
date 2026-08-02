@@ -9,9 +9,9 @@ namespace OrderCalculatorTests
     public class OrderTests
     {
         [Fact]
-        public void OrderTests_GetTotalCose()
+        public void OrderTests_GetTotalCost()
         {
-            var order = GetOrder();
+            var order = GetOrder(false);
             var orderCalculator = new OrderCalculator.OrderCalculator();
             var result = orderCalculator.ProcessOrder(order);
 
@@ -20,7 +20,19 @@ namespace OrderCalculatorTests
             Assert.Equal(11, result.TotalCost);
         }
 
-        private Order GetOrder()
+        [Fact]
+        public void OrderTests_GetTotalCost_SpeedyShipping()
+        {
+            var order = GetOrder(true);
+            var orderCalculator = new OrderCalculator.OrderCalculator();
+            var result = orderCalculator.ProcessOrder(order);
+
+            Assert.Equal(6, result.Packages[0].Cost);
+            Assert.Equal(16, result.Packages[1].Cost);
+            Assert.Equal(21, result.TotalCost);
+        }
+
+        private Order GetOrder(bool speedyShipping)
         {
             return new Order
             {
@@ -38,7 +50,8 @@ namespace OrderCalculatorTests
                         Width = 30,
                         Height = 40
                     }
-                }
+                },
+                UseSpeedyShipping = speedyShipping
             };
         }        
     }

@@ -33,12 +33,14 @@ namespace OrderCalculator.Models
         /// Cost of the package
         /// </summary>
         public int Cost { get; set; }
+
+        public bool SpeedyShipping { get; set; }
     }
 
 
     internal class Order
     {
         public List<Package> Packages { get; set; } = new List<Package>();
-
+        public bool UseSpeedyShipping { get; set; }
     }    
 }

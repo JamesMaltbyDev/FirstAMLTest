@@ -20,10 +20,18 @@ namespace OrderCalculator
 
             foreach (var package in order.Packages)
             {                
-                var cost = FixedCostCalculator.GetPackageCost(package);
-                package.Cost = cost;
+                var cost = FixedCostCalculator.GetPackageCost(package, order.UseSpeedyShipping);
+                package.Cost = cost;                
 
-                result.Packages.Add(package);
+                var clonedPackage = new Package
+                {
+                    Length = package.Length,
+                    Width = package.Width,
+                    Height = package.Height
+                };
+
+                result.Packages.Add(clonedPackage);
+
                 result.TotalCost += cost;
             }
 

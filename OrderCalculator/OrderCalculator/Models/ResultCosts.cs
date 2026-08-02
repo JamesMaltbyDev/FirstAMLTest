@@ -6,7 +6,7 @@ namespace OrderCalculator.Models
 {
     internal class ResultCosts
     {
-        public List<Package> Packages { get; set; }
+        public List<Package> Packages { get; set; }        
         public int TotalCost { get; set; }
     }
 }
