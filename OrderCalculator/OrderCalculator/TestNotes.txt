@@ -1,0 +1,14 @@
+﻿First AML Test:
+
+Assumptions:
+
+Next Steps, what would I have done better:
+
+Step 3:
+Add property int weight to Package model and modify OrderCalculator class to calculate cost respecting the weight. Add unit tets.
+
+Step 4:
+Add property bool heavy parcel to Package class and modify OrderCalculator class to calculate cost respecting the heavy parcel flag. Add unit tests.
+
+Step 5:
+Modify Order Calculator to calculate new business rules and add unit tests.
